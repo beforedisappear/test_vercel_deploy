@@ -18,7 +18,7 @@ export default async function ServicePage(props: PageProps) {
     }
   `);
 
-  if (!data.ok) return notFound();
+  if (!data.ok) throw new Error(data.statusText);
 
   const res = await data.json();
 
